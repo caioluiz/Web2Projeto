@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
         if (usuario instanceof Aluno) {
             resp.sendRedirect("view/aluno/home.jsp");
         } else {
-            resp.sendRedirect("view/professor/index.jsp");
+            resp.sendRedirect("view/professor/home.jsp");
         }
     }
 }
