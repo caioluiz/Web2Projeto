@@ -4,11 +4,28 @@ package model;
 
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Projeto extends Extensao {
 	
+	@OneToMany
+	@JoinTable(
+		    name = "programa_curso",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "curso_id")
+		)
 	private List<Curso> cursos;
-	private List<Serviço> serviços;
-	private Local local;
+	@OneToMany
+	@JoinTable(
+		    name = "programa_servico",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "servico_id")
+		)
+	private List<Servico> servicos;
 	
 	public Projeto() {
 		
@@ -22,20 +39,12 @@ public class Projeto extends Extensao {
 		this.cursos = cursos;
 	}
 
-	public List<Serviço> getServiços() {
-		return serviços;
+	public List<Servico> getServiços() {
+		return servicos;
 	}
 
-	public void setServiços(List<Serviço> serviços) {
-		this.serviços = serviços;
-	}
-
-	public Local getLocal() {
-		return local;
-	}
-
-	public void setLocal(Local local) {
-		this.local = local;
+	public void setServiços(List<Servico> servicos) {
+		this.servicos = servicos;
 	}
 	
 

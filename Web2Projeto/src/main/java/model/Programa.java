@@ -4,11 +4,41 @@ package model;
 
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Programa extends Extensao { 
-	
+
+	@OneToMany
+	@JoinTable(
+		    name = "programa_curso",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "curso_id")
+		)
 	private List<Curso> cursos;
+	@OneToMany
+	@JoinTable(
+		    name = "programa_evento",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "evento_id")
+		)
 	private List<Evento> eventos;
-	private List<Serviço> serviços;
+	@OneToMany
+	@JoinTable(
+		    name = "programa_servico",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "servico_id")
+		)
+	private List<Servico> servicos;
+	@OneToMany
+	@JoinTable(
+		    name = "programa_projeto",
+		    joinColumns = @JoinColumn(name = "programa_id"),
+		    inverseJoinColumns = @JoinColumn(name = "projeto_id")
+		)
 	private List<Projeto> projetos;
 	private String local; //ex UFRRJ ou campos seropedica - ufrrj. Diferente de Obj Local que pensa em predios.
 	
@@ -31,12 +61,12 @@ public class Programa extends Extensao {
 		this.eventos = eventos;
 	}
 
-	public List<Serviço> getServiços() {
-		return serviços;
+	public List<Servico> getServiços() {
+		return servicos;
 	}
 
-	public void setServiços(List<Serviço> serviços) {
-		this.serviços = serviços;
+	public void setServiços(List<Servico> servicos) {
+		this.servicos = servicos;
 	}
 
 	public List<Projeto> getProjetos() {

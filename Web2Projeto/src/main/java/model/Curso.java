@@ -8,11 +8,15 @@ import java.time.LocalTime;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Curso extends Extensao {
 	private List<DayOfWeek> diasdaSemana;
-	 private Local local;
+	@OneToOne
+	@JoinColumn(name ="Local_id")
+	private Local local;
 	private LocalTime horaDeInicio;
 	private LocalTime horadeTermino;
 	private String nivel;    //basico, intermediario, avançaado...
@@ -20,6 +24,7 @@ public class Curso extends Extensao {
 	private String duracaoTotal; // em meses
 	private double cargaHorariaSemanal; // semanal em horas
 	private String modalidade; // teorico, pratico, teorico-pratico.
+	private float taxa;
 	
 	public Curso() {
 	}
@@ -99,6 +104,14 @@ public class Curso extends Extensao {
 
 	public void setModalidade(String modalidade) {
 		this.modalidade = modalidade;
+	}
+
+	public float getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(float taxa) {
+		this.taxa = taxa;
 	}
 
 }

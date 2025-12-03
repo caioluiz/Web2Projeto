@@ -6,6 +6,8 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Evento extends Extensao {
@@ -13,7 +15,10 @@ public class Evento extends Extensao {
 	private LocalTime horaDeInicio;
 	private LocalTime horadeTermino;
 	private double cargaHoraria;
+	@OneToOne
+	@JoinColumn(name ="Local_id")
 	private Local local;
+	private float taxa;
 	
 	public Evento() {
 	}
@@ -61,6 +66,14 @@ public class Evento extends Extensao {
 
 	public void setLocal(Local local) {
 		this.local = local;
+	}
+
+	public float getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(float taxa) {
+		this.taxa = taxa;
 	}
 
 }

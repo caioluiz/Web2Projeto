@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Extensao {
@@ -14,6 +15,7 @@ public class Extensao {
 	private int id;
     private String titulo;
     private String descricao;
+    @ManyToOne
     private Responsavel responsavel;
     private String contato;
     private String linkExterno;
@@ -21,7 +23,6 @@ public class Extensao {
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private String publicoAlvo;
-    private boolean temTaxa;
 	
 	public int getId() {
 		return id;
