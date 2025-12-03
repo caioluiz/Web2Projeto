@@ -2,13 +2,20 @@ package model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Extensao {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
     private String titulo;
     private String descricao;
     private Responsavel responsavel;
-    private Local local;
-    private String contatoInscricao;
+    private String contato;
     private String linkExterno;
     private String status;
     private LocalDate dataInicio;
@@ -47,21 +54,13 @@ public class Extensao {
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
 	}
-
-	public Local getLocal() {
-		return local;
-	}
-
-	public void setLocal(Local local) {
-		this.local = local;
-	}
-
+	
 	public String getContatoInscricao() {
-		return contatoInscricao;
+		return contato;
 	}
 
-	public void setContatoInscricao(String contatoInscricao) {
-		this.contatoInscricao = contatoInscricao;
+	public void setContatoInscricao(String contato) {
+		this.contato = contato;
 	}
 
 	public String getLinkExterno() {
