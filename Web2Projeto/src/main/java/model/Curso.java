@@ -25,6 +25,7 @@ public class Curso extends Extensao {
 	private double cargaHorariaSemanal; // semanal em horas
 	private String modalidade; // teorico, pratico, teorico-pratico.
 	private float taxa;
+	private String materiais;   //mateiriais necessarios para fazer o curso ex. bola, pincel, requete...
 	
 	public Curso() {
 	}
@@ -112,6 +113,14 @@ public class Curso extends Extensao {
 
 	public void setTaxa(float taxa) {
 		this.taxa = taxa;
+	}
+
+	public String getMateriais() {
+		return materiais;
+	}
+
+	public void setMateriais(String materiais) {
+		this.materiais = materiais;
 	}
 
 }
