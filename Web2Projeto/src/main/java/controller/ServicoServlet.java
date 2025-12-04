@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Servlet implementation class ServicoServlet
  */
-@WebServlet("/ServicoServlet")
+@WebServlet("/prof/servicos")
 public class ServicoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -53,8 +53,16 @@ public class ServicoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-
-        Servico servico = new Servico();
+		
+		ServicoDAO dao = new ServicoDAO();
+		Servico servico;
+		
+		if (request.getParameter("id") != null && !request.getParameter("id").isEmpty()) {
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            servico = dao.buscarPorId(id);
+        } else {
+        	servico = new Servico();
+        }
         
         servico.setTitulo(request.getParameter("titulo"));
         servico.setDescricao(request.getParameter("descricao"));
