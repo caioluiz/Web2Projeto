@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 //Descrição dada pela  universidade sobre programas: Conjunto articulado de projetos e outras ações de extensão ou cultura, preferencialmente integrando as ações de extensão, cultura, pesquisa e ensino, tendo caráter orgânico institucional, clareza de diretrizes e orientação para um objetivo comum.
 
 import java.util.List;
@@ -42,7 +44,11 @@ public class Programa extends Extensao {
 	private List<Projeto> projetos;
 	private String local; //ex UFRRJ ou campos seropedica - ufrrj. Diferente de Obj Local que pensa em predios.
 	
-	public Programa() { 
+	public Programa() {
+		this.cursos = new ArrayList<>();
+		this.servicos = new ArrayList<>();
+		this.eventos = new ArrayList<>();
+		this.projetos = new ArrayList<>();
 	}
 
 	public List<Curso> getCursos() {
@@ -84,5 +90,22 @@ public class Programa extends Extensao {
 	public void setLocal(String local) {
 		this.local = local;
 	}
+	
+	public void addServico(Servico servico) {
+		this.servicos.add(servico);
+	}
+	
+	public void addEvento(Evento evento) {
+		this.eventos.add(evento);
+	}
+	
+	public void addProjeto(Projeto projeto) {
+		this.projetos.add(projeto);
+	}
+	
+	public void addCurso(Curso curso) {
+		this.cursos.add(curso);
+	}
+	
 
 }
