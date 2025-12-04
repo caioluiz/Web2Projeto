@@ -2,21 +2,17 @@ package model;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 
-@Entity
 public class Extensao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
     private String titulo;
     private String descricao;
-    @ManyToOne
-    private Responsavel responsavel;
+    private String responsavel;
     private String contato;
     private String linkExterno;
     private String status;
@@ -48,11 +44,11 @@ public class Extensao {
 		this.descricao = descricao;
 	}
 
-	public Responsavel getResponsavel() {
+	public String getResponsavel() {
 		return responsavel;
 	}
 
-	public void setResponsavel(Responsavel responsavel) {
+	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
 	}
 	

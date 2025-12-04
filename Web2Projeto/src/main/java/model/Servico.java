@@ -13,7 +13,7 @@ import jakarta.persistence.Entity;
 public class Servico extends Extensao {
 	
 	private String tipoServico;
-	private LocalTime horarioInicio;
+	private LocalTime horarioInicio;   //horarios de atendimento
 	private LocalTime horarioFim;
 	private List<DayOfWeek> diasAtendimento;
 	private String modalidadeAtendimento;
