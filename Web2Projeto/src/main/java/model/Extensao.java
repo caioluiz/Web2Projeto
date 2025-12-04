@@ -13,7 +13,7 @@ public abstract class Extensao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String titulo;
     @Column(columnDefinition = "TEXT")
@@ -32,11 +32,11 @@ public abstract class Extensao {
     private boolean temTaxa;
 	public Extensao() {}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

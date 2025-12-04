@@ -37,7 +37,7 @@ public class Evento extends Extensao {
         calcularCargaHoraria();
     }
 
-	public LocalTime getHoradeTermino() {
+	public LocalTime getHoraDeTermino() {
 		return horaDeTermino;
 	}
 

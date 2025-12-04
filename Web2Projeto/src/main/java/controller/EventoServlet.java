@@ -18,21 +18,29 @@ public class EventoServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String acao = req.getParameter("acao");
+        EventoDAO dao = new EventoDAO();
 
         if (acao == null) {
             // LISTAR
-            EventoDAO dao = new EventoDAO();
             req.setAttribute("lista", dao.listarTodos());
             req.getRequestDispatcher("/view/professor/eventos-listar.jsp").forward(req, resp);
             return;
         }
-        	// FORMULÁRIO
-        if ("form".equals(acao)) {
+
+        if (acao.equals("form")) {
+            // FORMULÁRIO EM BRANCO
+            req.getRequestDispatcher("/view/professor/eventos-form.jsp").forward(req, resp);
+            return;
+        }
+
+        if (acao.equals("editar")) {
+            Integer id = Integer.parseInt(req.getParameter("id"));
+            Evento e = dao.buscarPorId(id);
+            req.setAttribute("evento", e);
             req.getRequestDispatcher("/view/professor/eventos-form.jsp").forward(req, resp);
             return;
         }
     }
-
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -40,7 +48,16 @@ public class EventoServlet extends HttpServlet {
 
         req.setCharacterEncoding("UTF-8");
 
-        Evento e = new Evento();
+        EventoDAO dao = new EventoDAO();
+        Evento e;
+
+        // SE TIVER ID → atualizar
+        if (req.getParameter("id") != null && !req.getParameter("id").isEmpty()) {
+            Integer id = Integer.parseInt(req.getParameter("id"));
+            e = dao.buscarPorId(id);
+        } else {
+            e = new Evento();
+        }
 
         e.setTitulo(req.getParameter("titulo"));
         e.setDescricao(req.getParameter("descricao"));
@@ -49,21 +66,16 @@ public class EventoServlet extends HttpServlet {
         e.setLinkExterno(req.getParameter("linkExterno"));
         e.setPublicoAlvo(req.getParameter("publicoAlvo"));
         e.setStatus(req.getParameter("status"));
-
         e.setTemTaxa(req.getParameter("temTaxa") != null);
 
         e.setDataInicio(LocalDate.parse(req.getParameter("dataInicio")));
         e.setDataFim(LocalDate.parse(req.getParameter("dataFim")));
-
         e.setHoraDeInicio(LocalTime.parse(req.getParameter("horaInicio")));
         e.setHoraDeTermino(LocalTime.parse(req.getParameter("horaFim")));
-
         e.setMaxParticipantes(Integer.parseInt(req.getParameter("maxParticipantes")));
-
         e.setLocal(req.getParameter("local"));
 
-
-        new EventoDAO().salvar(e);
+        dao.salvar(e);
 
         resp.sendRedirect(req.getContextPath() + "/prof/eventos");
     }

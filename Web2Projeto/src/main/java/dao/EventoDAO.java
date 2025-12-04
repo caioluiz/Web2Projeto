@@ -9,13 +9,13 @@ import util.JPAUtil;
 
 public class EventoDAO {
 
-    public void salvar(Evento e) {
-        EntityManager em = JPAUtil.getEntityManager();
-        em.getTransaction().begin();
-        em.persist(e);
-        em.getTransaction().commit();
-        em.close();
-    }
+	public void salvar(Evento e) {
+	    EntityManager em = JPAUtil.getEntityManager();
+	    em.getTransaction().begin();
+	    em.merge(e); // funciona para insert e update
+	    em.getTransaction().commit();
+	    em.close();
+	}
 
     public List<Evento> listarTodos() {
         EntityManager em = JPAUtil.getEntityManager();
