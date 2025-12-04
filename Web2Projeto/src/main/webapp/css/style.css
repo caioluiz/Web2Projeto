@@ -3,3 +3,16 @@
 .bg-cobalto {
     background-color: #0f3b8c; /* azul do site da ufrrj */
 }
+
+html, body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
+}
+

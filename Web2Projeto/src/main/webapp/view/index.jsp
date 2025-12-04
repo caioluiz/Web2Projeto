@@ -10,50 +10,59 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 		<link rel="stylesheet" href="../css/style.css">
 	</head>
-	<body>
+	<body class="d-flex flex-column min-vh-100">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-cobalto text-white">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+  	<div class="container-fluid">
+    	<a class="navbar-brand" href="#">
       <img src="../img/rural_logo_branco04.png" alt="Logo UFRRJ" width="250">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    	</a>
+    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Início</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Eventos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projetos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Programas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Serviços</a>
-        </li>
-      </ul>
-	    <div>
-		   	<a href="https://www.facebook.com/universidadefederalrural" class="text-decoration-none text-white">
-		  		<i class="bi bi-facebook me-3"></i>
-			</a>
-			<a href="https://www.instagram.com/universidadefederalrural" class="text-decoration-none text-white">
-		  		<i class="bi bi-instagram me-3"></i>
-			</a>
-			<a href="https://www.youtube.com/universidaderural" class="text-decoration-none text-white">
-		  		<i class="bi bi-youtube"></i>
-			</a>
+    	</button>
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        	<li class="nav-item">
+	         		 <a class="nav-link active" aria-current="page" href="#">Início</a>
+	        	</li>
+	       		<li class="nav-item">
+	          		<a class="nav-link" href="#">Eventos</a>
+	        	</li>
+		        <li class="nav-item">
+		          	<a class="nav-link" href="#">Cursos</a>
+		        </li>
+		        <li class="nav-item">
+		          	<a class="nav-link" href="#">Projetos</a>
+		        </li>
+		        <li class="nav-item">
+		          	<a class="nav-link" href="#">Programas</a>
+		        </li>
+		        <li class="nav-item">
+		          	<a class="nav-link" href="#">Serviços</a>
+		        </li>
+	      	</ul>
+		    <div>
+			   	<a href="https://www.facebook.com/universidadefederalrural" class="text-decoration-none text-white">
+			  		<i class="bi bi-facebook me-3"></i>
+				</a>
+				<a href="https://www.instagram.com/universidadefederalrural" class="text-decoration-none text-white">
+			  		<i class="bi bi-instagram me-3"></i>
+				</a>
+				<a href="https://www.youtube.com/universidaderural" class="text-decoration-none text-white">
+			  		<i class="bi bi-youtube"></i>
+				</a>
+		    </div>
 	    </div>
-    </div>
-  </div>
+  	</div>
 </nav>
+	<main class="flex-grow-1">
+
+	</main>
+	<footer id="sticky-footer" class="bg-cobalto text-light text-center py-3 mt-5">
+	    <div class="container">
+	        <p class="mb-1">Projeto desenvolvido por: Laís de Souza Martins Cano e  Caio Luiz Ramos De Souza</p>
+	        <p class="mb-0">© 2025</p>
+	    </div>
+	</footer>
 	</body>
 </html>
