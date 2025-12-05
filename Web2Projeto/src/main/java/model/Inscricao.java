@@ -22,7 +22,7 @@ public class Inscricao {
 
     private LocalDate dataInscricao;
 
-    private String status; // “Inscrito”, “Cancelado”
+    private String status; 
 
     public Integer getId() { return id; }
 

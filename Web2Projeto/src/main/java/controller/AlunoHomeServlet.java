@@ -30,7 +30,6 @@ public class AlunoHomeServlet extends HttpServlet {
 
         List<ExtensaoResumo> lista = new ArrayList<>();
 
-        // EVENTOS
         for (Evento e : new EventoDAO().listarTodos()) {
             lista.add(new ExtensaoResumo(
                     e.getId(),
@@ -42,7 +41,6 @@ public class AlunoHomeServlet extends HttpServlet {
             ));
         }
 
-        // CURSOS
         for (Curso c : new CursoDAO().listarTodos()) {
             lista.add(new ExtensaoResumo(
                     c.getId(),
@@ -54,7 +52,6 @@ public class AlunoHomeServlet extends HttpServlet {
             ));
         }
 
-        // SERVICOS
         for (Servico s : new ServicoDAO().listarTodos()) {
             lista.add(new ExtensaoResumo(
                     s.getId(),
@@ -66,7 +63,6 @@ public class AlunoHomeServlet extends HttpServlet {
             ));
         }
 
-        // PROJETOS
         for (Projeto p : new ProjetoDAO().listarTodos()) {
             lista.add(new ExtensaoResumo(
                     p.getId(),
@@ -78,7 +74,6 @@ public class AlunoHomeServlet extends HttpServlet {
             ));
         }
 
-        // PROGRAMAS
         for (Programa pg : new ProgramaDAO().listarTodos()) {
             lista.add(new ExtensaoResumo(
                     pg.getId(),

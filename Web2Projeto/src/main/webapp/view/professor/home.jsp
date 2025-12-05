@@ -47,7 +47,6 @@
 
     <div class="row g-4">
 
-        <!-- Eventos -->
         <div class="col-md-4">
             <a href="<%=request.getContextPath()%>/prof/eventos" class="text-decoration-none">
                 <div class="card shadow-sm text-center p-4">
@@ -58,7 +57,6 @@
             </a>
         </div>
 
-        <!-- Cursos -->
         <div class="col-md-4">
             <a href="<%=request.getContextPath()%>/prof/cursos" class="text-decoration-none">
                 <div class="card shadow-sm text-center p-4">
@@ -69,7 +67,6 @@
             </a>
         </div>
 
-        <!-- Projetos -->
         <div class="col-md-4">
             <a href="<%=request.getContextPath()%>/prof/projetos" class="text-decoration-none">
                 <div class="card shadow-sm text-center p-4">
@@ -80,7 +77,6 @@
             </a>
         </div>
 
-        <!-- Programas -->
         <div class="col-md-4">
             <a href="<%=request.getContextPath()%>/prof/programas" class="text-decoration-none">
                 <div class="card shadow-sm text-center p-4">
@@ -91,7 +87,6 @@
             </a>
         </div>
 
-        <!-- Serviços -->
         <div class="col-md-4">
             <a href="<%=request.getContextPath()%>/prof/servicos" class="text-decoration-none">
                 <div class="card shadow-sm text-center p-4">

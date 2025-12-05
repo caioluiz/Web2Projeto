@@ -21,14 +21,12 @@ public class EventoServlet extends HttpServlet {
         EventoDAO dao = new EventoDAO();
 
         if (acao == null) {
-            // LISTAR
             req.setAttribute("lista", dao.listarTodos());
             req.getRequestDispatcher("/view/professor/eventos-listar.jsp").forward(req, resp);
             return;
         }
 
         if (acao.equals("form")) {
-            // FORMULÁRIO EM BRANCO
             req.getRequestDispatcher("/view/professor/eventos-form.jsp").forward(req, resp);
             return;
         }
@@ -51,7 +49,6 @@ public class EventoServlet extends HttpServlet {
         EventoDAO dao = new EventoDAO();
         Evento e;
 
-        // SE TIVER ID → atualizar
         if (req.getParameter("id") != null && !req.getParameter("id").isEmpty()) {
             Integer id = Integer.parseInt(req.getParameter("id"));
             e = dao.buscarPorId(id);

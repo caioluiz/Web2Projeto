@@ -4,7 +4,7 @@ public class ExtensaoResumo {
 
     private Integer id;
     private String titulo;
-    private String tipo;  // EVENTO, CURSO, SERVICO, PROJETO, PROGRAMA
+    private String tipo;  
     private String dataInicio;
     private String dataFim;
     private String status;

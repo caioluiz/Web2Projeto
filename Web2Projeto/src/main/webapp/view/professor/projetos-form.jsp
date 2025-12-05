@@ -49,7 +49,6 @@
             <input type="hidden" name="id" value="<%= p.getId() %>">
         <% } %>
 
-        <!-- CAMPOS PADRÃO DA EXTENSAO -->
         <div class="row">
             <div class="col-md-8 mb-3">
                 <label class="form-label">Título</label>
@@ -87,7 +86,6 @@
             </div>
         </div>
 
-        <!-- DATA E HORÁRIO -->
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="form-label">Data Início</label>
@@ -102,7 +100,6 @@
             </div>
         </div>
 
-        <!-- DURAÇÃO -->
         <div class="mb-3">
             <label class="form-label">Duração</label>
             <input type="text" name="duracao" class="form-control" placeholder="ex: 6 meses"
@@ -111,7 +108,6 @@
 
         <hr>
 
-        <!-- SELEÇÃO DE CURSOS E SERVIÇOS -->
         <div class="row">
 
             <div class="col-md-6 mb-3">
@@ -144,19 +140,12 @@
 
         <hr>
 
-        <!-- BOTÃO -->
         <button type="submit" class="btn btn-success">Salvar</button>
         <a href="${pageContext.request.contextPath}/prof/projetos" class="btn btn-secondary">Cancelar</a>
 
     </form>
 </div>
 
-
-
-
-<!-- ================================================================== -->
-<!-- =========================== MODAL CURSOS ========================= -->
-<!-- ================================================================== -->
 <div class="modal fade" id="modalCursos" tabindex="-1">
   <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content">
@@ -203,10 +192,6 @@
 </div>
 
 
-
-<!-- ================================================================== -->
-<!-- ========================== MODAL SERVIÇOS ======================== -->
-<!-- ================================================================== -->
 <div class="modal fade" id="modalServicos" tabindex="-1">
   <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content">
@@ -252,11 +237,6 @@
   </div>
 </div>
 
-
-
-<!-- ================================================================== -->
-<!-- =============================== SCRIPT =========================== -->
-<!-- ================================================================== -->
 
 <script>
 

@@ -12,19 +12,17 @@ import jakarta.persistence.Enumerated;
 @Entity
 public class Servico extends Extensao {
 
-    private String tipoServico;  // Ex: atendimento, orientação, suporte ...
+    private String tipoServico;  // atendimento, orientação, suporte ...
 
-    private LocalTime horarioInicio;  // horário de atendimento
+    private LocalTime horarioInicio; 
     private LocalTime horarioFim;
 
     private String diasAtendimento; // ex: "SEG, TER, QUA"
 
     private String modalidadeAtendimento;  
-    // Ex: presencial, online, híbrido
+    //presencial, online, híbrido
 
     public Servico() {}
-
-    // GETTERS E SETTERS
 
     public String getTipoServico() {
         return tipoServico;

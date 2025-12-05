@@ -32,7 +32,6 @@ public class ProjetoServlet extends HttpServlet {
 	    ServicoDAO servicoDAO = new ServicoDAO();
 
 	    if (acao == null) {
-	        // LISTAR
 	        req.setAttribute("lista", projetoDAO.listarTodos());
 	        req.getRequestDispatcher("/view/professor/projetos-listar.jsp").forward(req, resp);
 	        return;
@@ -40,11 +39,10 @@ public class ProjetoServlet extends HttpServlet {
 
 	    if (acao.equals("form")) {
 
-	        // ENVIAR LISTA DE CURSOS E SERVIÇOS PARA O JSP
 	        req.setAttribute("cursos", cursoDAO.listarTodos());
 	        req.setAttribute("servicos", servicoDAO.listarTodos());
 
-	        Projeto p = new Projeto(); // Criar vazio
+	        Projeto p = new Projeto(); 
 	        req.setAttribute("projeto", p);
 
 	        req.getRequestDispatcher("/view/professor/projetos-form.jsp").forward(req, resp);
@@ -57,7 +55,6 @@ public class ProjetoServlet extends HttpServlet {
 
 	        req.setAttribute("projeto", p);
 
-	        // ENVIAR LISTAS NOVAMENTE
 	        req.setAttribute("cursos", cursoDAO.listarTodos());
 	        req.setAttribute("servicos", servicoDAO.listarTodos());
 
@@ -79,7 +76,6 @@ public class ProjetoServlet extends HttpServlet {
         ProjetoDAO dao = new ProjetoDAO();
         Projeto p = (id == null) ? new Projeto() : dao.buscarPorId(id);
 
-        // CAMPOS DA EXTENSÃO
         p.setTitulo(req.getParameter("titulo"));
         p.setDescricao(req.getParameter("descricao"));
         p.setResponsavel(req.getParameter("responsavel"));
@@ -93,7 +89,6 @@ public class ProjetoServlet extends HttpServlet {
         p.setDataInicio(LocalDate.parse(req.getParameter("dataInicio")));
         p.setDataFim(LocalDate.parse(req.getParameter("dataFim")));
         
-        // CAMPOS DO PROJETO
         p.setDuracao(req.getParameter("duracao"));
         p.setCursosIds(req.getParameter("cursosIds"));
         p.setServicosIds(req.getParameter("servicosIds"));

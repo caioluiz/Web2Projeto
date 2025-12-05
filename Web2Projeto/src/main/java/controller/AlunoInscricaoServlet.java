@@ -32,14 +32,12 @@ public class AlunoInscricaoServlet extends HttpServlet {
 
         InscricaoDAO dao = new InscricaoDAO();
 
-        // Verifica se já existe inscrição
         Inscricao existente = dao.buscarExistente(aluno.getId(), tipo, id);
         if (existente != null) {
             resp.sendRedirect(req.getContextPath() + "/aluno/home?msg=ja_inscrito");
             return;
         }
 
-        // Criar nova inscrição
         Inscricao i = new Inscricao();
         i.setAluno(aluno);
         i.setTipo(tipo);

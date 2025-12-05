@@ -58,7 +58,6 @@
 
     <hr>
 
-    <!-- DADOS BÁSICOS -->
     <div class="row">
 
         <div class="col-md-8 mb-3">
@@ -119,7 +118,6 @@
             </div>
         </div>
 
-        <%-- EXIBE HORÁRIO SE FOR CURSO, EVENTO ou SERVIÇO --%>
         <%
             java.time.LocalTime hi = null;
             java.time.LocalTime hf = null;
@@ -149,7 +147,6 @@
 
     <hr>
 
-    <!-- RELACIONAMENTOS (PROJETO / PROGRAMA) -->
     <%
         if (e instanceof Projeto) {
             Projeto pr = (Projeto) e;
@@ -179,10 +176,6 @@
     <% } %>
 
     <hr>
-
-    <!-- BOTÕES -->
-    <a href="${pageContext.request.contextPath}/aluno/inscrever?tipo=<%= tipo %>&id=<%= e.getId() %>"
-       class="btn btn-success btn-lg">Inscrever-se</a>
 
     <a href="<%=request.getContextPath()%>/view/aluno/home.jsp" class="btn btn-secondary btn-lg">Voltar</a>
 

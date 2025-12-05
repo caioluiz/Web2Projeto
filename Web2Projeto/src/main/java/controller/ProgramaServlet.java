@@ -30,11 +30,10 @@ public class ProgramaServlet extends HttpServlet {
         }
 
         if ("form".equals(acao)) {
-            // novo
+
             Programa p = new Programa();
             req.setAttribute("programa", p);
 
-            // enviar listas para modais
             req.setAttribute("cursos", new CursoDAO().listarTodos());
             req.setAttribute("eventos", new EventoDAO().listarTodos());
             req.setAttribute("servicos", new ServicoDAO().listarTodos());
@@ -49,7 +48,6 @@ public class ProgramaServlet extends HttpServlet {
             Programa p = dao.buscarPorId(id);
             req.setAttribute("programa", p);
 
-            // enviar listas para modais
             req.setAttribute("cursos", new CursoDAO().listarTodos());
             req.setAttribute("eventos", new EventoDAO().listarTodos());
             req.setAttribute("servicos", new ServicoDAO().listarTodos());
@@ -66,7 +64,6 @@ public class ProgramaServlet extends HttpServlet {
             return;
         }
 
-        // se não reconheceu a ação, volta para listagem
         resp.sendRedirect(req.getContextPath() + "/prof/programas");
     }
 
@@ -82,7 +79,6 @@ public class ProgramaServlet extends HttpServlet {
         ProgramaDAO dao = new ProgramaDAO();
         Programa p = (id == null) ? new Programa() : dao.buscarPorId(id);
 
-        // CAMPOS (Extensao)
         p.setTitulo(req.getParameter("titulo"));
         p.setDescricao(req.getParameter("descricao"));
         p.setResponsavel(req.getParameter("responsavel"));
@@ -93,7 +89,6 @@ public class ProgramaServlet extends HttpServlet {
         p.setTemTaxa(req.getParameter("temTaxa") != null);
         p.setLocal(req.getParameter("local"));
 
-        // datas/horas (defensivo: checar nulls)
         String di = req.getParameter("dataInicio");
         if (di != null && !di.isBlank()) p.setDataInicio(LocalDate.parse(di));
 
@@ -101,7 +96,6 @@ public class ProgramaServlet extends HttpServlet {
         if (df != null && !df.isBlank()) p.setDataFim(LocalDate.parse(df));
 
 
-        // CAMPOS ESPECÍFICOS DO PROGRAMA (modelo string-ids)
         p.setDuracao(req.getParameter("duracao"));
         p.setCursosIds(req.getParameter("cursosIds"));
         p.setEventosIds(req.getParameter("eventosIds"));

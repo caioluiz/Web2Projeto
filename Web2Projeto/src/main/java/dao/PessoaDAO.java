@@ -13,7 +13,6 @@ public class PessoaDAO {
         EntityManager em = JPAUtil.getEntityManager();
 
         try {
-            // Tenta aluno
             Aluno aluno = em.createQuery(
                 "SELECT a FROM Aluno a WHERE a.email = :email AND a.senha = :senha",
                 Aluno.class
@@ -25,7 +24,6 @@ public class PessoaDAO {
             return aluno;
 
         } catch (NoResultException e) {
-            // não achou aluno, tenta professor
         }
 
         try {

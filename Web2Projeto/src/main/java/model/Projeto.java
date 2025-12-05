@@ -18,10 +18,10 @@ import model.Servico;
 @Entity
 @Table(name = "projetos")
 public class Projeto extends Extensao {
-	private String cursosIds;   // lista de IDs de Cursos: "1,3,7"
-    private String servicosIds; // lista de IDs de Serviços: "4,6"
+	private String cursosIds; 
+    private String servicosIds; 
 
-    private String duracao;     // texto livre, ex: "6 meses"
+    private String duracao;    
 
     public Projeto() { }
 

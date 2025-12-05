@@ -56,7 +56,6 @@ public class InscricaoDAO {
             .setParameter("a", alunoId)
             .getResultList();
 
-        // Preencher os títulos dinamicamente
         for (Inscricao i : lista) {
             String tipo = i.getTipo();
             int id = i.getExtensaoId();

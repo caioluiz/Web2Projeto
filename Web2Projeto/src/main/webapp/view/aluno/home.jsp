@@ -87,8 +87,19 @@
 				    <a href="${pageContext.request.contextPath}/aluno/detalhes?tipo=<%= e.getTipo() %>&id=<%= e.getId() %>"
 				       class="btn btn-primary btn-sm">Ver detalhes</a>
 				
-				    <a href="${pageContext.request.contextPath}/aluno/inscrever?tipo=<%= e.getTipo() %>&id=<%= e.getId() %>"
-				       class="btn btn-success btn-sm">Inscrever-se</a>
+				    <% if ("Encerrado".equals(e.getStatus())) { %>
+
+				    <button class="btn btn-secondary btn-sm" disabled>
+				        Encerrado
+				    </button>
+
+					<% } else { %>
+					
+					    <a href="${pageContext.request.contextPath}/aluno/inscrever?tipo=<%= e.getTipo() %>&id=<%= e.getId() %>"
+					       class="btn btn-success btn-sm">Inscrever-se</a>
+					
+					<% } %>
+
 				</td>
 
             </tr>

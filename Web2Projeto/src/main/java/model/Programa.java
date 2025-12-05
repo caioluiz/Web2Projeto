@@ -7,12 +7,12 @@ import jakarta.persistence.*;
 @Table(name = "programas")
 public class Programa extends Extensao {
 	
-	private String cursosIds;     // "1,2,5"
-    private String eventosIds;    // "3,7"
-    private String servicosIds;   // "1,8"
-    private String projetosIds;   // "2"
+	private String cursosIds;    
+    private String eventosIds;   
+    private String servicosIds;  
+    private String projetosIds;   
 
-    private String duracao;       // opcional
+    private String duracao;      
 
 	public String getEventosIds() {
 		return eventosIds;

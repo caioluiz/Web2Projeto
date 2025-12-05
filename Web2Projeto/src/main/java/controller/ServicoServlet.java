@@ -64,7 +64,6 @@ public class ServicoServlet extends HttpServlet {
         ServicoDAO dao = new ServicoDAO();
         Servico s = (id == null) ? new Servico() : dao.buscarPorId(id);
 
-        // CAMPOS DE EXTENSAO
         s.setTitulo(req.getParameter("titulo"));
         s.setDescricao(req.getParameter("descricao"));
         s.setResponsavel(req.getParameter("responsavel"));
@@ -77,14 +76,11 @@ public class ServicoServlet extends HttpServlet {
         s.setDataInicio(LocalDate.parse(req.getParameter("dataInicio")));
         s.setDataFim(LocalDate.parse(req.getParameter("dataFim")));
 
-
-        // CAMPOS ESPECÍFICOS DO SERVIÇO
         s.setTipoServico(req.getParameter("tipoServico"));
         s.setHoraDeInicio(LocalTime.parse(req.getParameter("horarioInicio")));
         s.setHoraDeTermino(LocalTime.parse(req.getParameter("horarioFim")));
         s.setModalidadeAtendimento(req.getParameter("modalidadeAtendimento"));
 
-        // LISTA DE DIAS (checkboxes)
         String[] dias = req.getParameterValues("diasAtendimento");
         String diasStr = "";
 

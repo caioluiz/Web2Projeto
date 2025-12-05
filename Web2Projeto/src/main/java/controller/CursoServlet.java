@@ -19,7 +19,6 @@ public class CursoServlet extends HttpServlet {
 
         String acao = req.getParameter("acao");
 
-        // LISTAR
         if (acao == null) {
             CursoDAO dao = new CursoDAO();
             req.setAttribute("lista", dao.listarTodos());
@@ -27,13 +26,11 @@ public class CursoServlet extends HttpServlet {
             return;
         }
 
-        // FORM NOVO
         if ("form".equals(acao)) {
             req.getRequestDispatcher("/view/professor/cursos-form.jsp").forward(req, resp);
             return;
         }
 
-        // FORM EDITAR
         if ("editar".equals(acao)) {
             Integer id = Integer.parseInt(req.getParameter("id"));
             Curso c = new CursoDAO().buscarPorId(id);
@@ -49,14 +46,12 @@ public class CursoServlet extends HttpServlet {
 
         req.setCharacterEncoding("UTF-8");
 
-        // VERIFICA ID PARA VER SE É EDIÇÃO
         String idParam = req.getParameter("id");
         Integer id = (idParam != null && !idParam.isBlank()) ? Integer.valueOf(idParam) : null;
 
         CursoDAO dao = new CursoDAO();
         Curso c = (id == null) ? new Curso() : dao.buscarPorId(id);
 
-        // CAMPOS DA EXTENSAO (GENÉRICOS)
         c.setTitulo(req.getParameter("titulo"));
         c.setDescricao(req.getParameter("descricao"));
         c.setResponsavel(req.getParameter("responsavel"));
@@ -72,7 +67,6 @@ public class CursoServlet extends HttpServlet {
         c.setHoraDeInicio(LocalTime.parse(req.getParameter("horaInicio")));
         c.setHoraDeTermino(LocalTime.parse(req.getParameter("horaFim")));
 
-        // CAMPOS DO CURSO (ESPECÍFICOS)
         c.setMaxParticipantes(Integer.parseInt(req.getParameter("maxParticipantes")));
         c.setNivel(req.getParameter("nivel"));
         c.setModalidade(req.getParameter("modalidade"));

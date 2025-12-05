@@ -68,7 +68,6 @@
 				<td><%= e.getLocal() %></td>
 				<td><%= e.getStatus() %></td>
 
-				<!-- BOTÃO EDITAR -->
 				<td>
 					<a href="${pageContext.request.contextPath}/prof/eventos?acao=editar&id=<%= e.getId() %>" 
 					   class="btn btn-sm btn-warning">

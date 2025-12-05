@@ -93,7 +93,6 @@
             </div>
         </div>
 
-        <!-- PERÍODO -->
         <div class="row">
 
             <div class="col-md-3 mb-3">
@@ -123,7 +122,6 @@
 
         <hr>
 
-        <!-- CAMPOS ESPECÍFICOS DO SERVIÇO -->
         <h4>Informações do Serviço</h4>
 
         <div class="row">
@@ -149,7 +147,6 @@
             </div>
         </div>
 
-        <!-- HORÁRIOS DE ATENDIMENTO -->
         <div class="row">
 
             <div class="col-md-3 mb-3">
@@ -171,8 +168,6 @@
 			</div>
 
         </div>
-
-        <!-- STATUS -->
         <div class="col-md-3 mb-3">
             <label>Status</label>
             <select class="form-select" name="status">
