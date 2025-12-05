@@ -2,12 +2,27 @@ package model;
 
 import java.time.LocalDate;
 
-public class Extensao {
-	private int id;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Extensao {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String titulo;
+    @Column(columnDefinition = "TEXT")
     private String descricao;
-    private Responsavel responsavel;
-    private Local local;
+    
+    private String responsavel;
+
+    private String local;
+    
     private String contatoInscricao;
     private String linkExterno;
     private String status;
@@ -15,12 +30,13 @@ public class Extensao {
     private LocalDate dataFim;
     private String publicoAlvo;
     private boolean temTaxa;
-	
-	public int getId() {
+	public Extensao() {}
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -40,20 +56,20 @@ public class Extensao {
 		this.descricao = descricao;
 	}
 
-	public Responsavel getResponsavel() {
+	public String getResponsavel() {
 		return responsavel;
 	}
 
-	public void setResponsavel(Responsavel responsavel) {
+	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
 	}
 
-	public Local getLocal() {
-		return local;
+	public String getLocal() {
+	    return local;
 	}
 
-	public void setLocal(Local local) {
-		this.local = local;
+	public void setLocal(String local) {
+	    this.local = local;
 	}
 
 	public String getContatoInscricao() {
@@ -104,7 +120,12 @@ public class Extensao {
 		this.publicoAlvo = publicoAlvo;
 	}
 
-	public Extensao() {
+	public boolean isTemTaxa() {
+		return temTaxa;
+	}
+
+	public void setTemTaxa(boolean temTaxa) {
+		this.temTaxa = temTaxa;
 	}
 
 }
